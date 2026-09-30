@@ -1,0 +1,6 @@
+{
+  "name": "Hangman: Rescue Mission",
+  "description": "A retro deep space arcade vocabulary game about rescuing Artsy, with Fastolfe hints, Merriam-Webster dictionary data, and reverse-deduction duels against Illucia AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

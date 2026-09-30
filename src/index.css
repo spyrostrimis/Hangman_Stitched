@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #0b0d1a;
+    color: #e1e1f4;
+    font-family: 'Space Mono', monospace;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0b0d1a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1a1f38;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #10cfe6;
+  }
+}
+
+.font-display {
+  font-family: 'Bruno Ace SC', 'Space Grotesk', cursive, sans-serif;
+}
+
+.font-headline {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-mono-arcade {
+  font-family: 'Space Mono', monospace;
+}
+
+/* CRT Scanlines Overlay */
+.scanlines {
+  background: linear-gradient(rgba(16, 207, 230, 0.015) 50%, rgba(0, 0, 0, 0.22) 50%);
+  background-size: 100% 4px;
+}
+
+.crt-overlay {
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.35) 50%),
+              linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Glow Utilities */
+.glow-box-cyan {
+  box-shadow: 0 0 16px rgba(16, 207, 230, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.glow-box-yellow {
+  box-shadow: 0 0 16px rgba(243, 244, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.glow-box-violet {
+  box-shadow: 0 0 16px rgba(165, 78, 215, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Hologram float */
+@keyframes hologramHover {
+  0%, 100% { transform: translateY(0px); filter: drop-shadow(0 0 10px rgba(165, 78, 215, 0.45)); }
+  50% { transform: translateY(-4px); filter: drop-shadow(0 0 18px rgba(165, 78, 215, 0.75)); }
+}
+.illucia-hologram {
+  animation: hologramHover 4s ease-in-out infinite;
+}
+
+/* Terminal Cursor */
+@keyframes termBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.term-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  vertical-align: -2px;
+  background-color: #10cfe6;
+  animation: termBlink 1s infinite;
+}
